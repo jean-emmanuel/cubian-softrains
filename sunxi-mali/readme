@@ -1,0 +1,4 @@
+Then copy over the default xorg.conf for the fbturbo driver (the preferred location for xorg.conf would be /etc/X11/ instead of /usr/share/X11/xorg.conf.d/):
+rm /usr/share/X11/xorg.conf.d/99-sunxifb.conf
+cp xorg.conf /etc/X11/xorg.conf
+
