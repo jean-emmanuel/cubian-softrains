@@ -11,7 +11,6 @@ sudo dd if=/path/to/Cubian-base-r8-a10.img of=/dev/mmcblk0 bs=4096;sync
 2. Start the cubieboard (sd card in), login with ssh
 ```
 ssh cubie@cubieboard_ip -p36000
-git clone https://github.com/jean-emmanuel/cubian-softrains
 ```
 
 3. Upgrade to Jessie
@@ -19,6 +18,9 @@ git clone https://github.com/jean-emmanuel/cubian-softrains
 sudo nano /etc/apt/sources.list # replace wheezy with jessie, comment cubian repo
 sudo apt-get update
 sudo apt-get dist-upgrade # quite a long process, get a book...
+
+sudo apt-get git
+git clone https://github.com/jean-emmanuel/cubian-softrains
 ```
 
 4. X Server
@@ -42,7 +44,7 @@ sudo cp xorg.conf /etc/X11/xorg.conf
 4. Audio Tools
 ```
 # Only jackd2 will work, don't install jackd1
-sudo apt-get install jackd2 a2jmidid gladish sooperlooper guitarix libcanberra-gtk-module libcanberra-gtk0 tap-plugins calf-plugins python-webkit python-pyo python-liblo git
+sudo apt-get install jackd2 a2jmidid gladish sooperlooper guitarix libcanberra-gtk-module libcanberra-gtk0 tap-plugins calf-plugins python-webkit python-pyo python-liblo
 sudo nano /etc/modules # add snd_seq in a new line to avoid ALSA sequencer error (modprobe snd_seq or reboot needed) 
 
 # Want the Non-* Suite ? Got it packaged for jessie-armhf !
